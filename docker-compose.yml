@@ -1,0 +1,19 @@
+services:
+  mitmproxy:
+    image: mitmproxy/mitmproxy
+    command: su -c "python /usr/local/bin/mitmweb --set confdir=/config"
+    privileged: true
+    network_mode: "host"
+    volumes:
+      - ./src/mitmproxy:/config
+    env_file:
+      - .env
+
+  ap:
+    build: ./src/ap
+    privileged: true
+    network_mode: "host"
+    volumes:
+      - ./src/ap/dnsmasq.leases:/var/lib/misc/dnsmasq.leases
+    env_file:
+      - .env

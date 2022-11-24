@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/hackersir/static/css/main.cd46f3b8.css",
+    "main.js": "/hackersir/static/js/main.e2c74d86.js",
+    "index.html": "/hackersir/index.html",
+    "main.cd46f3b8.css.map": "/hackersir/static/css/main.cd46f3b8.css.map",
+    "main.e2c74d86.js.map": "/hackersir/static/js/main.e2c74d86.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.cd46f3b8.css",
+    "static/js/main.e2c74d86.js"
+  ]
+}

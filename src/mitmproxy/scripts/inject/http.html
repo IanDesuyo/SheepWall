@@ -1,0 +1,74 @@
+<div id="hackersir-sheepwall">
+  <header class="flex-col">
+    <h1>逢甲大學黑客社</h1>
+    <p>資訊安全週 不安全 Wi-Fi 演示</p>
+  </header>
+  <div class="flex-col">
+    <img
+      class="hs-logo"
+      src="https://cdn.jsdelivr.net/gh/HackerSir/hackersir-web-2022/static/image/HackerSir_Circle.png"
+    />
+    <h1>您的網頁已被小黑造訪</h1>
+    <p>小黑喜歡跑去不安全的網站搗亂</p>
+    <p>請記得使用 <strong>HTTPS</strong> 連線</p>
+    <button onclick='window.location.protocol="https"'>立即使用</button>
+  </div>
+  <footer>
+    <p><span>Made By IanDesuyo</span> | <span>2022</span></p>
+  </footer>
+  <style>
+    @keyframes hs-fade {
+      0% {
+        opacity: 0;
+        transform: translateY(-2vh);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    @keyframes hs-spin {
+      0% {
+        transform: rotate(0);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+    #hackersir-sheepwall {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 102vh;
+      z-index: 2147483646;
+      color: #fff;
+      background: hsla(0, 0%, 0%, 0.7);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      padding: 32px;
+      animation: hs-fade 1s ease-in-out;
+    }
+    #hackersir-sheepwall h1 {
+      font-weight: 700;
+    }
+    #hackersir-sheepwall .flex-col {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    #hackersir-sheepwall .hs-logo {
+      width: 100%;
+      max-width: 300px;
+      margin: 16px 0;
+      animation: hs-spin 5s ease-in-out;
+      animation-delay: 0.5s;
+    }
+    #hackersir-sheepwall footer {
+      color: #bcbcbc;
+    }
+  </style>
+</div>
