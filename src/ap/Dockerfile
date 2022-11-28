@@ -10,5 +10,6 @@ ADD ./hostapd.conf /etc/hostapd/hostapd.conf
 ADD ./hostapd /etc/default/hostapd
 
 ADD ./entrypoint.sh /app/entrypoint.sh
+RUN chmod +x /app/entrypoint.sh
 
 ENTRYPOINT ["/app/entrypoint.sh"]

@@ -12,14 +12,14 @@ DHCP_RANGE="${DHCP_RANGE:-10.0.1.1,10.0.15.254,2h}"
 # Update configuration
 ifconfig $AP_IFACE $AP_NET
 
-sed -i "s/interface=.*/interface=$AP_IFACE/g" /etc/dnsmasq.conf
-sed -i "s/listen-address=.*/listen-address=$HOST_ADDR/g" /etc/dnsmasq.conf
-sed -i "s/dhcp-range=.*/dhcp-range=$DHCP_RANGE/g" /etc/dnsmasq.conf
-sed -i "s/dhcp-option=.*/dhcp-option=option:dns-server,$HOST_ADDR/g" /etc/dnsmasq.conf
+sed -i "s/^interface=.*/interface=$AP_IFACE/g" /etc/dnsmasq.conf
+sed -i "s/^listen-address=.*/listen-address=$HOST_ADDR/g" /etc/dnsmasq.conf
+sed -i "s/^dhcp-range=.*/dhcp-range=$DHCP_RANGE/g" /etc/dnsmasq.conf
+sed -i "s/^dhcp-option=.*/dhcp-option=option:dns-server,$HOST_ADDR/g" /etc/dnsmasq.conf
 
-sed -i "s/interface=.*/interface=$AP_IFACE/g" /etc/hostapd/hostapd.conf
-sed -i "s/ssid=.*/ssid=$SSID/g" /etc/hostapd/hostapd.conf
-sed -i "s/channel=.*/channel=$AP_CHANNEL/g" /etc/hostapd/hostapd.conf
+sed -i "s/^interface=.*/interface=$AP_IFACE/g" /etc/hostapd/hostapd.conf
+sed -i "s/^ssid=.*/ssid=$SSID/g" /etc/hostapd/hostapd.conf
+sed -i "s/^channel=.*/channel=$AP_CHANNEL/g" /etc/hostapd/hostapd.conf
 
 # Enable IP forwarding
 echo 1 > /proc/sys/net/ipv4/ip_forward

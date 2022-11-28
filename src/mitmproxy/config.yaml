@@ -2,6 +2,7 @@ mode:
   - "transparent@8080"
   - "reverse:dns://1.1.1.1@53"
 showhost: true
+stream_large_bodies: "1m"
 
 # Web
 web_host: "127.0.0.1"
@@ -9,5 +10,5 @@ web_port: 8081
 
 scripts:
   - "/config/scripts/main.py"
-  - "/config/scripts/inject.py"
   - "/config/scripts/customUI.py"
+  - "/config/scripts/inject.py"
