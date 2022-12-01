@@ -11,4 +11,5 @@ web_port: 8081
 scripts:
   - "/config/scripts/main.py"
   - "/config/scripts/customUI.py"
+  - "/config/scripts/captive_portal.py"
   - "/config/scripts/inject.py"
