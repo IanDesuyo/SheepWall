@@ -1,4 +1,5 @@
 <div id="hackersir-sheepwall">
+  <button class="close" onclick='document.querySelector("#hackersir-sheepwall").outerHTML = ""'>X</button>
   <header class="flex-col">
     <h1>逢甲大學黑客社</h1>
     <p>資訊安全週 不安全Wi-Fi演示</p>
@@ -13,8 +14,8 @@
     <p>那麼小黑就可以搗亂啦</p>
     <script>
       setTimeout(function () {
-        window.location = "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
-      }, 5000)
+        window.location = "https://www.youtube.com/watch?v=dQw4w9WgXcQ";
+      }, 5000);
     </script>
   </div>
   <footer>
@@ -54,6 +55,12 @@
       align-items: center;
       padding: 32px;
       animation: hs-fade 1s ease-in-out;
+    }
+    #hackersir-sheepwall .close {
+      position: fixed;
+      top: 0;
+      right: 0;
+      padding: 16px;
     }
     #hackersir-sheepwall h1 {
       font-weight: 700;
