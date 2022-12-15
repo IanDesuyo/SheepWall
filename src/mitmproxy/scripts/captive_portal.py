@@ -1,4 +1,5 @@
 import os
+import json
 from mitmproxy.http import HTTPFlow, Response
 from mitmproxy.addons.asgiapp import WSGIApp, serve
 from flask import Flask, request, render_template
@@ -11,15 +12,28 @@ class CaptivePortal(WSGIApp):
     def __init__(self):
         self.portal_domain = os.getenv("PORTAL_DOMAIN", "example.com")
         self.allow_clients = []
-        
+
         self.app = Flask("CaptivePortal", template_folder=file_dir)
         self.app.add_url_rule("/", "index", self.index, methods=["GET"])
         self.app.add_url_rule("/", "allow", self.allow, methods=["POST"])
 
         super().__init__(self.app, self.portal_domain, 80)
 
+    def load(self):
+        try:
+            with open(file_dir / "allow_clients.json", "r+") as f:
+                self.allow_clients = json.load(f)
+        except:
+            self.allow_clients = []
+
+    def done(self):
+        try:
+            with open(file_dir / "allow_clients.json", "w+") as f:
+                json.dump(self.allow_clients, f)
+        except:
+            pass
+
     async def request(self, flow: HTTPFlow) -> None:
-        print(flow.request.pretty_host)
         if self.should_serve(flow):
             return await serve(self.asgi_app, flow)
 
