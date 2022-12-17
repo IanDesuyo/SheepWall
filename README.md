@@ -67,16 +67,16 @@ Supported interface modes:
 
 ### mitmproxy
 
-由於 mitmproxy 9.x.x 內建的 `allow_host` 及 `ignore_host` 僅能同時設定 http 與 https 之過濾條件, 因此將於啟動時自動載入 [main.py](src\mitmproxy\scripts\main.py) 來複寫內部邏輯
+由於 mitmproxy 9.x.x 內建的 `allow_host` 及 `ignore_host` 僅能同時設定 http 與 https 之過濾條件, 因此將於啟動時自動載入 [main.py](src/mitmproxy/scripts/main.py) 來複寫內部邏輯
 
 預設設定會載入以下腳本:
 
-- [scripts/inject.py](src\mitmproxy\scripts\inject.py)
+- [scripts/inject.py](src/mitmproxy/scripts/inject.py)
 
   - 在攔截的 HTML Response Body 末端注入自訂的 HTML, 來提示使用者網路連線不安全
-  - 注入的 HTML 位於 [inject](src\mitmproxy\scripts\inject)
+  - 注入的 HTML 位於 [inject](src/mitmproxy/scripts/inject/)
 
-- [scripts/customUI](src\mitmproxy\scripts\customUI.py)
+- [scripts/customUI](src/mitmproxy/scripts/customUI.py)
 
   - 自製的展示用網頁 UI, 掛載於 web server 的 `/hackersir/` 路徑下
   - 網頁原始碼位於 [web](web)
@@ -100,9 +100,9 @@ sudo docker compose up
 
 ## Advanced
 
-此專案使用 Cloudflare DNS 作為來源 DNS, 你可以在 [config.yaml](src\mitmproxy\config.yaml) 中修改
+此專案使用 Cloudflare DNS 作為來源 DNS, 你可以在 [config.yaml](src/mitmproxy/config.yaml) 中修改
 
-詳細 Access Point 設定可以在 [ap](src\ap) 中找到
+詳細 Access Point 設定可以在 [ap](src/ap/) 中找到
 
 ## FAQ
 
