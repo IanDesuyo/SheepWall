@@ -20,7 +20,7 @@
     "react-scripts": "5.0.1",
     "react-window": "^1.8.8",
     "typescript": "^4.8.4",
-    "ua-parser-js": "^1.0.32",
+    "ua-parser-js": "^1.0.33",
     "web-vitals": "^2.1.4"
   },
   "devDependencies": {
